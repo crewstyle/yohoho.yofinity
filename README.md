@@ -28,7 +28,29 @@ bower install --save jquery.infinity
 
 ## 3) How to use it
 
-Be patient... I have an island to conquere!
+It's pretty simple to user the *Infinity* jQuery package. It's a two-steps install.  
+In your HTML:
+
+````html
+<a href="http://example.com/page/2" title="Next posts" rel="next">Loading...</a>
+````
+
+In your Javascript:
+````javascript
+$(document).ready({
+    $('body').infinity({
+        buffer: 1000,
+        navSelector: 'a[rel="next"]',
+        success: function ($link, response){
+            $link.before(response);
+            $link.attr('href', '/page/2');
+        },
+        error: function ($link){
+            $link.remove();
+        }
+    });
+});
+````
 
 
 ## 4) That's all folkes!
