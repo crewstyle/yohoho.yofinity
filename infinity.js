@@ -1,5 +1,5 @@
 /*! *//*!
- * infinity.js v1.0.0 - "SOGEKINNNNNGGG - One Piece"
+ * infinity.js v1.0.0 - "Sogeking no shima deeeeeee - One Piece"
  * ~~~~~~~~~~~~~~~~~~
  *
  * Example of use HTML:
