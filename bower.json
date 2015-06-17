@@ -1,0 +1,26 @@
+{
+  "name": "infinity",
+  "version": "1.0.0",
+  "homepage": "https://github.com/crewstyle/infinity",
+  "authors": [
+    "Achraf Chouk <achrafchouk@gmail.com>"
+  ],
+  "description": "An infinite scroll jQuery plugin",
+  "main": ["dist/infinity.min.js"],
+  "keywords": [
+    "infinite",
+    "scroll",
+    "jquery"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}
