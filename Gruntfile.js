@@ -1,7 +1,7 @@
 /*! *//*!
  * ~~~~~~~~~~~~~~~~~~
- * Infinity - ï~ﬁî~î†Ú
- * https://github.com/crewstyle/infinity
+ * Yofinity - Ÿœﬁî~î†Ú
+ * https://github.com/crewstyle/yofinity
  * ~~~~~~~~~~~~~~~~~~
  * Copyright 20xx Achraf Chouk (http://github.com/crewstyle)
  */
@@ -12,7 +12,7 @@ module.exports = function (grunt){
     grunt.initConfig({
         //project settings
         yohoho: {
-            name: 'infinity',
+            name: 'yofinity',
             path: {
                 bow: 'bower_components',
                 src: '.',
@@ -23,18 +23,18 @@ module.exports = function (grunt){
         //packages are listed here
         pkg: grunt.file.readJSON('package.json'),
 
+        //JShint validation
+        jshint: {
+            all: [
+                '<%= yohoho.path.src %>/<%= yohoho.name %>.js'
+            ]
+        },
+
         //1. remove any previously-created files
         clean: [
             '<%= yohoho.path.tar %>/*',
             '<%= yohoho.path.tar %>/standalone/*',
         ],
-
-        //1. JShint validation
-        jshint: {
-            all: [
-                '<%= yohoho.path.tar %>/*.js'
-            ]
-        },
 
         //2. uglify JS files
         uglify: {
@@ -73,7 +73,7 @@ module.exports = function (grunt){
     //------ [REGISTER TASKS] ------//
 
     //JShint validation task: grunt hint
-    grunt.registerTask('hint',      ['jshint']);
+    grunt.registerTask('test',      ['jshint']);
 
     //default task: `grunt default` / `grunt`
     grunt.registerTask('default',   ['clean','uglify']);

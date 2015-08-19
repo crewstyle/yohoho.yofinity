@@ -1,4 +1,4 @@
-# Infinity
+# Yofinity
 
 _an infinite scroll jQuery plugin_
 
@@ -14,21 +14,21 @@ _an infinite scroll jQuery plugin_
 
 ## 1) What is this all about?
 
-[Infinity](https://github.com/crewstyle/infinity) is a very light jQuery infinite scroll plugin.  
+[Yofinity](https://github.com/crewstyle/yofinity) is a very light jQuery infinite scroll plugin.  
 
 
 ## 2) Install
 
-If you use [Bower.io](http://bower.io), you can download *Infinity* and use it with:
+If you use [Bower.io](http://bower.io), you can download *Yofinity* and use it with:
 
 ````
-bower install --save jquery.infinity
+bower install --save jquery.yofinity
 ````
 
 
 ## 3) How to use it
 
-It's pretty simple to use the *Infinity* jQuery package. It's a two-steps install.  
+It's pretty simple to use the *Yofinity* jQuery package. It's a two-steps install.  
 In your HTML:
 
 ````html
@@ -38,7 +38,7 @@ In your HTML:
 In your Javascript:
 ````javascript
 $(document).ready({
-    $('body').infinity({
+    $('body').yofinity({
         buffer: 1000,
         navSelector: 'a[rel="next"]',
         success: function ($link, response){
@@ -66,7 +66,7 @@ Now let's have fun :)
 + http://twitter.com/crewstyle
 + http://github.com/crewstyle
 
-Please, read [LICENSE](https://github.com/crewstyle/infinity/blob/master/LICENSE "LICENSE") for more details.
+Please, read [LICENSE](https://github.com/crewstyle/yofinity/blob/master/LICENSE "LICENSE") for more details.
 
 Copyright 20xx [Achraf Chouk](http://github.com/crewstyle "Achraf Chouk").  
 Brewed by Achraf Chouk, served by [Take a tea](http://www.takeatea.com "Take a tea") ;)

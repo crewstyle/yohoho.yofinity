@@ -1,12 +1,14 @@
 {
-  "name": "jquery.infinity",
+  "name": "jquery.yofinity",
   "version": "1.0.0",
-  "homepage": "https://github.com/crewstyle/infinity",
+  "homepage": "https://github.com/crewstyle/yofinity",
   "authors": [
     "Achraf Chouk <achrafchouk@gmail.com>"
   ],
   "description": "An infinite scroll jQuery plugin",
-  "main": ["dist/infinity.min.js"],
+  "main": [
+    "dist/yofinity.min.js"
+  ],
   "keywords": [
     "infinite",
     "scroll",

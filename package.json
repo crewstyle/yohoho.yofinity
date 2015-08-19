@@ -1,14 +1,14 @@
 {
-  "name": "infinity",
+  "name": "yofinity",
   "version": "1.0.0",
   "description": "An infinite scroll jQuery plugin",
-  "main": "dist/infinity.min.js",
+  "main": "dist/yofinity.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/crewstyle/infinity.git"
+    "url": "https://github.com/crewstyle/yofinity.git"
   },
   "keywords": [
     "infinite",
