@@ -1,4 +1,4 @@
-# Yofinity
+# Yofinity [![Build Status](https://travis-ci.org/crewstyle/yofinity.svg)](https://travis-ci.org/crewstyle/yofinity)
 
 _an infinite scroll jQuery plugin_
 
