@@ -1,5 +1,5 @@
 {
-  "name": "jquery.yofinity",
+  "name": "yohoho.yofinity",
   "version": "1.0.0",
   "homepage": "https://github.com/crewstyle/yofinity",
   "authors": [
@@ -14,7 +14,6 @@
     "scroll",
     "jquery"
   ],
-  "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -22,6 +21,7 @@
     "test",
     "tests"
   ],
+  "license": "MIT",
   "dependencies": {
     "jquery": "~2.1.4"
   }

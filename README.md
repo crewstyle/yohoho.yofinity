@@ -22,7 +22,7 @@ _an infinite scroll jQuery plugin_
 If you use [Bower.io](http://bower.io), you can download *Yofinity* and use it with:
 
 ````
-bower install --save jquery.yofinity
+bower install --save yohoho.yofinity
 ````
 
 
