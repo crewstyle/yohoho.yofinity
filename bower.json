@@ -1,6 +1,6 @@
 {
   "name": "yohoho.yofinity",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/crewstyle/yofinity",
   "authors": [
     "Achraf Chouk <achrafchouk@gmail.com>"
@@ -10,9 +10,11 @@
     "dist/yofinity.min.js"
   ],
   "keywords": [
+    "yofinity",
     "infinite",
     "scroll",
-    "jquery"
+    "jquery-plugin",
+    "ecosystem:jquery"
   ],
   "ignore": [
     "**/.*",

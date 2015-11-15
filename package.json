@@ -1,6 +1,6 @@
 {
   "name": "yofinity",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An infinite scroll jQuery plugin",
   "main": "dist/yofinity.min.js",
   "scripts": {
@@ -11,12 +11,14 @@
     "url": "https://github.com/crewstyle/yofinity.git"
   },
   "keywords": [
+    "yofinity",
     "infinite",
     "scroll",
-    "jquery"
+    "jquery-plugin",
+    "ecosystem:jquery"
   ],
   "author": "Achraf Chouk <achrafchouk@gmail.com>",
-  "license": "http://opensource.org/licenses/MIT",
+  "license": "MIT",
   "dependencies": {
     "grunt": "~0.4.5",
     "grunt-contrib-clean": "^0.6.0",
