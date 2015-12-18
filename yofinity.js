@@ -1,5 +1,5 @@
 /*! *//*!
- * yofinity.js v1.0.0 - "Sogeking no shima deeeeeee - One Piece"
+ * yofinity.js v1.0.2 - "Sogeking no shima deeeeeee - One Piece"
  * ~~~~~~~~~~~~~~~~~~
  *
  * Example of use HTML:
@@ -40,21 +40,29 @@
     Yofinity.prototype.$context = null;
 
     Yofinity.prototype.initialize = function (){
-        var _yofinity = this;
-        var _time = null;
+        var _yofinity = this,
+            _time = null,
+            _request = function (){
+                //check timer
+                if (_time) {
+                    clearTimeout(_time);
+                    _time = null;
+                }
+
+                //set timer
+                _time = setTimeout(function (){
+                    _yofinity.check();
+                }, 250);
+            };
+
+        //check heights and make a first ajax call if needed
+        if (_yofinity.$context.get(0).scrollHeight > _yofinity.$context.height()) {
+            _request();
+        }
 
         //bind scroll event
         _yofinity.$context.on('scroll', function (e){
-            //check timer
-            if (_time) {
-                clearTimeout(_time);
-                _time = null;
-            }
-
-            //set timer
-            _time = setTimeout(function (){
-                _yofinity.check();
-            }, 250);
+            _request();
         });
     };
 
