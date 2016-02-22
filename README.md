@@ -5,6 +5,9 @@ _an infinite scroll jQuery plugin_
 [![GitHub version](https://badge.fury.io/gh/crewstyle%2Fyofinity.svg)](https://badge.fury.io/gh/crewstyle%2Fyofinity)  
 
 
+## [Demo page](https://cdn.rawgit.com/crewstyle/yofinity/6240d7e5288cb958bb3d88c29d1fe9beda7c423f/demo/index.html)
+
+
 ## Package manager
 
 ````javascript
