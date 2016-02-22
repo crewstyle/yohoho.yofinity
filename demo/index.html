@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Yofinity demo, by crewstyle</title>
+
+    <meta name="description" content="An infinite scroll jQuery plugin">
+    <meta name="author" content="crewstyle">
+    <link href="https://cdn.rawgit.com/crewstyle/Urca/master/tests/prism/prism.css" rel="stylesheet">
+    <link href="https://cdn.rawgit.com/crewstyle/Urca/master/dist/urca.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>header,section{border-bottom:10px solid rgba(160,177,193,.25);margin-bottom:50px;padding-bottom:50px}header p{margin:0}footer p{margin:0 0 50px}h3.serif{font-size:16px;font-style:italic}hr{opacity:.5}pre,pre[class*=language-]{margin:50px 0 0;max-height:200px}</style>
+</head>
+<body>
+    <div class="container small">
+        <header>
+            <h1>Yofinity, an infinite scroll jQuery plugin</h1>
+            <p><a href="https://github.com/crewstyle/yofinity" title="Flexy's Github project page">&lsaquo; Github project page</a></p>
+        </header>
+
+        <!-- typography -->
+        <section>
+            <h2>Getting started</h2>
+
+            <h3 class="serif">Default size</h3>
+
+            <!-- iframe -->
+            <div class="yofinity-container">
+                <article>
+                    Article <strong>1</strong>
+                    <p>Vivamus id nulla orci. Integer scelerisque ut lacus a ultrices. Praesent sit amet aliquet purus, varius tempus augue. Aliquam nec diam lacinia, porta enim eget, venenatis purus.</p>
+                </article>
+                <article>
+                    Article <strong>2</strong>
+                    <p>Vivamus id nulla orci. Integer scelerisque ut lacus a ultrices. Praesent sit amet aliquet purus, varius tempus augue. Aliquam nec diam lacinia, porta enim eget, venenatis purus.</p>
+                </article>
+                <article>
+                    Article <strong>3</strong>
+                    <p>Vivamus id nulla orci. Integer scelerisque ut lacus a ultrices. Praesent sit amet aliquet purus, varius tempus augue. Aliquam nec diam lacinia, porta enim eget, venenatis purus.</p>
+                </article>
+                <article>
+                    Article <strong>4</strong>
+                    <p>Vivamus id nulla orci. Integer scelerisque ut lacus a ultrices. Praesent sit amet aliquet purus, varius tempus augue. Aliquam nec diam lacinia, porta enim eget, venenatis purus.</p>
+                </article>
+                <article>
+                    Article <strong>5</strong>
+                    <p>Vivamus id nulla orci. Integer scelerisque ut lacus a ultrices. Praesent sit amet aliquet purus, varius tempus augue. Aliquam nec diam lacinia, porta enim eget, venenatis purus.</p>
+                </article>
+
+                <a href="./yofinity.html?page=1" title="Next posts" rel="next">Loading...</a>
+            </div>
+
+            <pre><code class="language-markup">
+&lt;a href="./yofinity.html?page=1" title="Next posts" rel="next"&gt;Loading...&lt;/a&gt;
+            </code></pre>
+
+            <pre><code class="language-javascript">
+(function ($){
+    var _number = 2;
+
+    $('body').yofinity({
+        buffer: 1000,
+        navSelector: 'a[rel="next"]',
+        success: function ($link, response){
+            $link.before(response);
+            $link.attr('href', './yofinity.html?page=' + _number);
+            _number++;
+        },
+        error: function ($link){
+            $link.remove();
+        }
+    });
+})(jQuery);
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Options</h2>
+
+            <table>
+                <tr>
+                    <th>Option</th>
+                    <th>Type</th>
+                    <th>Default</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>addcss</td>
+                    <td>boolean</td>
+                    <td>true</td>
+                    <td>Enables default flexy inline CSS applied to wrapper and video element</td>
+                </tr>
+                <tr>
+                    <td>classname</td>
+                    <td>string</td>
+                    <td>'flexy-wrapper'</td>
+                    <td>CSS class applied to wrapper</td>
+                </tr>
+                <tr>
+                    <td>widescreen</td>
+                    <td>boolean</td>
+                    <td>true</td>
+                    <td>Enables wide screen format (16/9). Made especially for Vimeo embed</td>
+                </tr>
+            </table>
+        </section>
+
+        <footer>
+            <p>Made with ♥ by <a href="https://github.com/crewstyle" title="Achraf Chouk's Github profile">Achraf Chouk</a></p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.rawgit.com/crewstyle/Urca/master/tests/prism/prism.js"></script>
+    <script src="https://cdn.rawgit.com/crewstyle/Urca/master/tests/prism/remove.js"></script>
+    <script src="../dist/yofinity.min.js"></script>
+    <script>
+        (function ($){
+            var _number = 2;
+
+            $('body').yofinity({
+                buffer: 1000,
+                navSelector: 'a[rel="next"]',
+                success: function ($link, response){
+                    $link.before(response);
+                    $link.attr('href', './yofinity.html?page=' + _number);
+                    _number++;
+                },
+                error: function ($link){
+                    $link.remove();
+                }
+            });
+        })(jQuery);
+    </script>
+</body>
+</html>
