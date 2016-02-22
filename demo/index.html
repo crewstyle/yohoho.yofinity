@@ -154,8 +154,15 @@
                 navSelector: 'a[rel="next"]',
                 success: function ($link, response){
                     $link.before(response);
-                    $link.attr('href', './yofinity.html?page=' + _number);
-                    _number++;
+
+                    if (3 >= _number) {
+                        $link.attr('href', './yofinity.html?page=' + _number);
+                        _number++;
+                    }
+                    else {
+                        //this is just for the demo
+                        $link.attr('href', 'error');
+                    }
                 },
                 error: function ($link){
                     $link.remove();
