@@ -93,22 +93,46 @@
                     <th>Description</th>
                 </tr>
                 <tr>
-                    <td>addcss</td>
-                    <td>boolean</td>
-                    <td>true</td>
-                    <td>Enables default flexy inline CSS applied to wrapper and video element</td>
+                    <td>buffer</td>
+                    <td>integer</td>
+                    <td>1000</td>
+                    <td>Number of pixels to fire infinite scroll BEFORE the node element</td>
                 </tr>
                 <tr>
-                    <td>classname</td>
+                    <td>context</td>
+                    <td>object</td>
+                    <td>window</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>debug</td>
+                    <td>boolean</td>
+                    <td>false</td>
+                    <td>Enables the debug tools when it's needed</td>
+                </tr>
+                <tr>
+                    <td>error</td>
+                    <td>function</td>
+                    <td>null</td>
+                    <td>Function called if script fires an error</td>
+                </tr>
+                <tr>
+                    <td>loading</td>
+                    <td>function</td>
+                    <td>null</td>
+                    <td>Function called when script fires loading</td>
+                </tr>
+                <tr>
+                    <td>navSelector</td>
                     <td>string</td>
-                    <td>'flexy-wrapper'</td>
-                    <td>CSS class applied to wrapper</td>
+                    <td>'a[rel="next"]'</td>
+                    <td>Define node element containing AJAX request through the href attribute</td>
                 </tr>
                 <tr>
-                    <td>widescreen</td>
-                    <td>boolean</td>
-                    <td>true</td>
-                    <td>Enables wide screen format (16/9). Made especially for Vimeo embed</td>
+                    <td>success</td>
+                    <td>function</td>
+                    <td>null</td>
+                    <td>Function called when script fires success</td>
                 </tr>
             </table>
         </section>
