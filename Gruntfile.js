@@ -1,80 +1,64 @@
 /*! *//*!
  * ~~~~~~~~~~~~~~~~~~
  * Yofinity - Ÿœﬁî~î†Ú
- * https://github.com/crewstyle/yofinity
+ * https://github.com/crewstyle/yohoho.yofinity
  * ~~~~~~~~~~~~~~~~~~
  * Copyright 20xx Achraf Chouk (http://github.com/crewstyle)
  */
 
 module.exports = function (grunt){
-    //------ [REGISTER CONFIGURATION] ------//
+  //------ [CONFIGURATION] ------//
+  var Helpers = require('./tasks/helpers'),
+    filterAvailable = Helpers.filterAvailableTasks,
+    _ = grunt.util._,
+    path = require('path');
 
-    grunt.initConfig({
-        //project settings
-        yohoho: {
-            name: 'yofinity',
-            path: {
-                bow: 'bower_components',
-                src: '.',
-                tar: 'dist'
-            }
-        },
+  //read package
+  Helpers.pkg = require('./package.json');
 
-        //packages are listed here
-        pkg: grunt.file.readJSON('package.json'),
+  //check time
+  if (Helpers.isPackageAvailable('time-grunt')) {
+    require('time-grunt')(grunt);
+  }
 
-        //JShint validation
-        jshint: {
-            all: [
-                '<%= yohoho.path.src %>/<%= yohoho.name %>.js'
-            ]
-        },
+  //loads task options from `tasks/options/` and tasks defined in `package.json`
+  var config = _.extend({},
+    require('load-grunt-config')(grunt, {
+      configPath: path.join(__dirname, 'tasks/options')
+    })
+  );
 
-        //1. remove any previously-created files
-        clean: [
-            '<%= yohoho.path.tar %>/*',
-            '<%= yohoho.path.tar %>/standalone/*',
-        ],
+  //loads tasks in `tasks`
+  grunt.loadTasks('tasks');
 
-        //2. uglify JS files
-        uglify: {
-            options: {
-                preserveComments: 'some'
-            },
-            my_target: {
-                files: {
-                    //JS version including jQuery package
-                    '<%= yohoho.path.tar %>/<%= yohoho.name %>.min.js': [
-                        //jQuery
-                        '<%= yohoho.path.bow %>/jquery/dist/jquery.js',
-                        //Main
-                        '<%= yohoho.path.src %>/<%= yohoho.name %>.js'
-                    ],
-                    //JS version without jQuery package
-                    '<%= yohoho.path.tar %>/standalone/<%= yohoho.name %>.min.js': [
-                        '<%= yohoho.path.src %>/<%= yohoho.name %>.js'
-                    ]
-                }
-            }
-        }
-    });
+  //set node environment
+  config.env = process.env;
 
-    //------ [REGISTER MODULES] ------//
 
-    //remove any previously-created files
-    grunt.loadNpmTasks('grunt-contrib-clean');
+  //------ [TASKS REGISTRATION] ------//
+  //JShint validation
+  grunt.registerTask('test', 'Test JS files.', ['debug']);
+  grunt.registerTask('debug', filterAvailable([
+    'jshint:src'
+  ]));
 
-    //JShint validation
-    grunt.loadNpmTasks('grunt-contrib-jshint');
+  //Default task
+  grunt.registerTask('default', 'Build minified & production-ready files.', [
+    'cleanall',
+    'minify'
+  ]);
 
-    //uglify JS files
-    grunt.loadNpmTasks('grunt-contrib-uglify');
+  //Clean distributed files
+  grunt.registerTask('cleanall', filterAvailable([
+    'clean:dist'
+  ]));
 
-    //------ [REGISTER TASKS] ------//
+  //Minify and uglify files
+  grunt.registerTask('minify', filterAvailable([
+    'uglify:src'
+  ]));
 
-    //JShint validation task: grunt hint
-    grunt.registerTask('test',      ['jshint']);
 
-    //default task: `grunt default` / `grunt`
-    grunt.registerTask('default',   ['clean','uglify']);
+  //------ [INITIALIZATION] ------//
+  grunt.initConfig(config);
 };
