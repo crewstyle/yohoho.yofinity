@@ -60,7 +60,7 @@ success | function | null | Function called when script fires success
 
 ## Dependencies
 
-jQuery 2.1.4
+jQuery **latest version**
 
 
 ## Authors and Copyright
