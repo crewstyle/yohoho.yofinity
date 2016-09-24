@@ -49,13 +49,17 @@ $('body').yofinity({
 
 Option | Type | Default | Description
 ------ | ---- | ------- | -----------
+ajaxUrl | string | '' | Ajax custom URL to specify if no next button is available (Usefull for WordPress sites with ajax call functions)
 buffer | integer | 1000 | Number of pixels to fire infinite scroll BEFORE the node element
 context | object | window | -
 debug | boolean | false | Enables the debug tools when it's needed
 error | function | null | Function called if script fires an error
+iterator | integer | 1 | Iterator may be used for pagination, define where to start. After each success call, the iterator is autoincremented
 loading | function | null | Function called when script fires loading
 navSelector | string | 'a[rel="next"]' | Define node element containing AJAX request through the `href` attribute
+params | object | {} | Parameters to send in POST or GET method
 success | function | null | Function called when script fires success
+type | string | 'get' | Method to send data with
 
 
 ## Dependencies

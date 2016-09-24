@@ -1,6 +1,6 @@
 {
   "name": "yohoho.yofinity",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "homepage": "https://github.com/crewstyle/yohoho.yofinity",
   "authors": [
     "Achraf Chouk <achrafchouk@gmail.com>"
@@ -25,6 +25,6 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "jquery": "~2.1.4"
+    "jquery": "*"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "yohoho.yofinity",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "An infinite scroll jQuery plugin",
   "main": "dist/yofinity.min.js",
   "scripts": {
